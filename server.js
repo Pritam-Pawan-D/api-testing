@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 // POST endpoint to receive data
-app.post("/api/data", (req, res) => {
+app.post("/api/createConversationTranscript", (req, res) => {
   const data = req.body;
   if (!data || Object.keys(data).length === 0) {
     return res.status(400).json({ error: "No data provided" });
@@ -21,7 +21,7 @@ app.post("/api/data", (req, res) => {
 });
 
 // GET endpoint to display all data
-app.get("/api/data", (req, res) => {
+app.get("/api/getConversation", (req, res) => {
   res.json(dataStore);
 });
 
